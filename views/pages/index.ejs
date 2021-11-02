@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<body onload="startTime()">
 <head>
   <%- include('../partials/head'); %>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="container">
+
 
 <header>
   <%- include('../partials/header'); %>
@@ -16,18 +18,19 @@
     <p>Welcomne to Michaelsoft! Every day we strive to create more product and put more of our product in your hands!</p>
     <p id="one"></p>
     <button onclick="random()">Random</button>
+    <p id="txt"></p>
 </body>
 </div>
-
 
 <script>
  function random(){
 
-document.getElementById("one").innerHTML = Math.floor(Math.random() * 10);
+document.getElementById("one").innerHTML = Math.floor(Math.random() * 1000);
 }
-</script>
-</main>
 
+
+</script>
+<script>
 function startTime() {
   const today = new Date();
   let h = today.getHours();
@@ -43,6 +46,8 @@ function checkTime(i) {
   if (i < 10) {i = "0" + i};
   return i;
 }
+</script>
+</main>
 
 
 <footer>
