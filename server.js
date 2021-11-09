@@ -37,7 +37,7 @@ app.get('/trey', function(req, res) {
   res.render('pages/team', {
     name: "Trey Floto", //I don't know how, I don't know why, but adding new things here don't work without restarting the PC.
     line1:"🎓Programming student, class of 2023", //too bad!
-    line2:"🔧Future software engineer.",
+    line2:"🔧Future software engineer.",//this code shouldnt be here anyways, we should be taking info from teamprofiles.json.
     line3:"Music and audio enthusiast. Technology & open-source enthusiast. Car enthusiast. Sci-fi enthusiast. Forward thinker. My specialties include managing people, and committing to work. In my career, make enough money to sustain me.",
   });
 });
@@ -83,8 +83,8 @@ app.get('/logan', function(req, res) {
 app.get('/feedback',function (req, res) {
   rawdata = fs.readFileSync('comments.json');
   let commentfile = JSON.parse(rawdata);
-  console.log(commentfile.comments);
-  res.render('pages/feedback.ejs', {
+  console.log(commentfile.comments); //do we really need it to do this every time we load the page?
+  res.render('pages/feedback.ejs', { //it seems kinda obnoxious bc this takes a lot of space
     comments: commentfile.comments
   })
 });
