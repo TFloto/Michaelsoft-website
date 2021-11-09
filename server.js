@@ -30,7 +30,7 @@ app.get('/', function(req, res) {
 
 // about page
 app.get('/about', function(req, res) {
-  res.render('pages/about');
+  res.render('pages/about'); //this is the page that serves 0 purpose
 });
 
 app.get('/trey', function(req, res) {
